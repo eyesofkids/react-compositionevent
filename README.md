@@ -23,13 +23,19 @@ After test, i found different OS/browsers could have different results. I have w
 
 Maybe someone could help to test and give me some idea for the solution. The better solution is to revise the events of controlled components in React.
 
-## How to test
+## Infos
 
-## dev env
+### Online Test
 
+[https://eyesofkids.github.io/](https://eyesofkids.github.io/)
 
+### boilerplate
 
-### IME & Words
+The boilerplate is [here](https://github.com/eyesofkids/react-compositionevent/tree/master/env).
+
+## Test Results
+
+### IME & Words for test
 
 1. Japanese: Stand Hiragana IME, "kimi no na ha" 君の名は
 2. Traditional Chinese: Zhuyin IME, "su3 2k7 au/6 y7" 你的名字
@@ -37,16 +43,18 @@ Maybe someone could help to test and give me some idea for the solution. The bet
 
 ### React Component
 
-- Controlled input component(<input...>)
+- Controlled/uncontrolled input component(<input...>)
 
-### Some results by OS
+### by OS
+
+> i have resolved these problems listed blow, the code is [here](https://github.com/eyesofkids/react-compositionevent/blob/master/controlled/App.js).
 
 #### macOS
 
 - Chrome v55: composition problem
 - Safari: composition problem
 - Firefox: composition problem
-- Opera v42: 
+- Opera v42: composition problem
 
 #### Win7
 
@@ -59,5 +67,7 @@ Maybe someone could help to test and give me some idea for the solution. The bet
 - IE 11: composition problem
 - Edge v38:  composition problem
 - Chrome v55: composition problem
-- Firefox v50: composition problem
+- Opera v42: composition problem
+
+
 
