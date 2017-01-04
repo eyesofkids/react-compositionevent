@@ -13,17 +13,21 @@
 
 The main problem is when users type these words from IME and do something like search the database or filter out from some data, sometimes these functions will be unworkable. For example, if users type "ni" during the composition session, maybe it will be one of "你尼泥腻" in Chinese or one of "にニ尼煮" in Japanese. But in this moment, the `change` event also be fired. If the search or filter functions of the application are designed to be invoked when `change` event occured, there maybe something wrong logically. These functions should be invoked after users finished the composition session.
 
-In React, there are three synthetic events - `onCompositionEnd`, `onCompositionStart` and `onCompositionUpdate`. If the input components(`<input...>` and `<textarea.../>`) are "uncontrolled", we can use them to help `onChange` to capture the text correctly. The only different point is Google Chrome change its events sequence after v53. Check [Cinput.js]() and [Ctextarea.js]() solutions.
+In React, there are three synthetic events - `onCompositionEnd`, `onCompositionStart` and `onCompositionUpdate`. If the input components(`<input...>` and `<textarea.../>`) are "uncontrolled", we can use them to help `onChange` to capture the text correctly. The only different point is Google Chrome change its events sequence after v53. Check [Cinput.js](https://github.com/eyesofkids/react-compositionevent/blob/master/uncontrolled/Cinput.js) and [Ctextarea.js](https://github.com/eyesofkids/react-compositionevent/blob/master/uncontrolled/Ctextarea.js) files.
 
 But if these input components are "controlled", it will be hard to solve the problem.
 
 Because these the `value` of a controlled component is came from `state`. We can't modify `state` directly and the only way to update state is using `this.setState()` to schedule update. But `this.setState()` may be asynchronous.
 
-After test, i found different OS/browsers could have different results. I have written some code to solve it. But i thought it isn't a good solution. It uses the browser detection and two properties of the `state` object. One is for input, another is for internal functions(search, filter...etc).
+After test, i found different OS/browsers could have different results. I have written some code to solve it. But i thought it isn't a good solution. It uses the browser detection and two properties of the `state` object. One is for input, another is for internal functions(search, filter...etc). It can't just use one property of the `state` object because i can't stop any `change` events, state need it to update the value of the input element. If i stop some change events during composition session, i would get nothing after typing these words from IME.
 
 Maybe someone could help to test and give me some idea for the solution. The better solution is to revise the events of controlled components in React.
 
 ## How to test
+
+## dev env
+
+
 
 ### IME & Words
 
@@ -35,22 +39,22 @@ Maybe someone could help to test and give me some idea for the solution. The bet
 
 - Controlled input component(<input...>)
 
-## by OS
+### Some results by OS
 
-### macOS
+#### macOS
 
 - Chrome v55: composition problem
 - Safari: composition problem
 - Firefox: composition problem
 - Opera v42: 
 
-### Win7
+#### Win7
 
 - IE 11: "NO" problem
 - Chrome v55: composition problem
 - Firefox v50: composition problem
 
-### Win10
+#### Win10
 
 - IE 11: composition problem
 - Edge v38:  composition problem

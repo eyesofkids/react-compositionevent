@@ -1,0 +1,9 @@
+[ignore]
+<PROJECT_ROOT>/build/.*
+<PROJECT_ROOT>/bak/.*
+
+[include]
+
+[libs]
+
+[options]

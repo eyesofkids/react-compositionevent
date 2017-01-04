@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "name": "webpack-es6-startkit",
+  "version": "1.0.1",
+  "license": "MIT",
+  "keywords": [
+    "babel",
+    "webpack"
+  ],
+  "homepage": "https://www.gitbook.com/book/eyesofkids/javascript-start-from-es6/",
+  "repository": "eyesofkids/webpack-es6-startkit",
+  "author": "Eddy Chang <eddy@joomla.com.tw> (http://eddychang.me)",
+  "description": "A startkit for client-side development in ES6.",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js --inline --progress --open",
+    "build": "webpack --config webpack-production.config.js --progress"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-transform-flow-strip-types": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.8.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.16.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0"
+  }
+}
