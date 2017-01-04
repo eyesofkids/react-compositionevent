@@ -1,3 +1,12 @@
+# Demo
+
+[https://eyesofkids.github.io/](https://eyesofkids.github.io/)
+
+![demo for japanese input method](https://eyesofkids.github.io/demo.gif)
+
+- input = pure onChange events
+- inner = onChange + onComposition events corrections
+
 ## What is `Composition Events` problem?
 
 [Composition Events](https://w3c.github.io/uievents/#events-compositionevents) will be fired when users type some text from IME. Developers can use these events to help `change` Event to capture the input text correctly. The `change` event occurs when a control loses the input focus and its value has been modified since gaining focus.
